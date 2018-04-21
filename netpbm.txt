@@ -1,0 +1,69 @@
+1. Készíts egy adattípust kétdimenziós színes (RGB) képek tárolására. A
+   kép egyes színekhez tartozó pixelértékei a képhez megadott [0..max]
+   intervallumba eshetnek. (Azaz a kép tulajdonságai: a szélessége, a
+   magassága, a maximális pixelérték és az egyes pixelek RGB
+   színkomponensenkénti értékei.)
+
+2. Írj egy függvényt, ami az elõbb elkészített adatstruktúrába beolvas
+   egy:
+   (a) PBM fájlt.
+   (b) PGM fájlt.
+   (c) PPM fájlt.
+
+3. Írj egy függvényt, ami az elõbb elkészített adatstruktúrában:
+   (a) Invertál egy képet, azaz minden pont minden színkomponensének
+       intenzitását megfordítja. (Figyelj arra, hogy a maximális érték
+       képenként változhat!)
+   (b) Függõleges tengelyére tükröz egy képet.
+   (c) Vízszintes tengelyére tükröz egy képet.
+   (d) 90 fokkal elforgat egy képet.
+   (e) 180 fokkal elforgat egy képet.
+   (f) 270 fokkal elforgat egy képet.
+
+4. Írj egy függvényt, ami az elõbb elkészített adatstruktúrában:
+   (a) Átalakít egy színes képet szürkeárnyalatos képpé úgy, hogy
+       egyszerûen átlagolja a pixel színenkénti értékeit. Azaz egy
+       (R,G,B) értékekkel rendelkezõ pontból egy mindhárom
+       színkomponensben (R+G+B)/3 értékû pontot lesz.
+   (b) Átalakít egy szürkeárnyalatos képet fekete-fehér képpé úgy, hogy
+       a maximális érték felénél nem nagyobb intenzitású pontokból
+       fekete, a többibõl fehér pontot csinál.
+   (c) Átalakít egy színes képet fekete-fehér képpé az elõzõ két mûvelet
+       segítségével.
+
+5. Írj egy függvényt, ami az elõbb elkészített adatstruktúrából az elõbb
+   megírt függvények felhasználásával (ha ez szükséges) kiír egy:
+   (a) PBM fájlt.
+   (b) PGM fájlt.
+   (c) PPM fájlt.
+
+6. Írj egy programot az elõzõek felhasználásával, ami beolvas egy PBM,
+   PGM vagy PPM formátumú képet (automatikusan ismerje fel a formátumot),
+   majd elvégzi a parancssorban megadott mûveleteket, és a végén kiírja
+   a képet. A program paraméterezése:
+
+       program input kimeneti-formátum output [mûveletek]
+
+   A lehetséges kimeneti formátumok:
+
+       -PBM : PBM fájl
+       -PGM : PGM fájl
+       -PPM : PPM fájl
+
+   A lehetséges mûveletek:
+
+       -i : invertálás
+       -v : függõleges tükrözés
+       -h : vízszintes tükrözés
+       -c : középpontos tükrözés (180 fokos forgatás)
+       -l : balra forgatás (90 fokos forgatás)
+       -r : jobba forgatás (270 fokos forgatás)
+       -g : szürkeárnyalatosra konverzió
+       -b : fekete-fehérre konverzió
+
+   Segítség:
+       http://netpbm.sourceforge.net/doc/
+       http://local.wasp.uwa.edu.au/~pbourke/dataformats/ppm/
+       man pbm
+       man pgm
+       man ppm
