@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Methods {
     static String[] fileDetails = new String[5];     // ### format, width, height, maxvalue, P-key
@@ -71,12 +70,6 @@ public class Methods {
         //showFileDetails();
         return raster.toString();
 
-    }
-
-    public static void showFileDetails() {
-        for (int i = 0; i < fileDetails.length; i++) {
-            System.out.println(fileDetails[i]);
-        }
     }
 
     public static Picture pictureFromRaster (String raster) {
@@ -153,7 +146,8 @@ public class Methods {
     }
 
     public static Picture leftRotat(Picture picture) {
-        return centralMirror(rightRotat(picture));
+        Picture result = centralMirror(rightRotat(picture));
+        return result;
     }
 
     public static Picture colorToGrey(Picture picture) {
@@ -192,7 +186,6 @@ public class Methods {
         Picture result = greyToBlackWhite(colorToGrey(picture));
         return result;
     }
-
 
     public static void write (String fileName, Picture picture) {
         BufferedWriter writer = null;

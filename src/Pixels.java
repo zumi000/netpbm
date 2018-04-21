@@ -19,21 +19,6 @@ public class Pixels {
         return pixR + " " + pixB + " " + pixG + " ";
     }
 
-    public int getPixR() {
-        return pixR;
-    }
-
-    public int getPixG() {
-        return pixG;
-    }
-
-    public int getPixB() {
-        return pixB;
-    }
-
-    public int getPix() {
-        return pix;
-    }
 }
 
 
